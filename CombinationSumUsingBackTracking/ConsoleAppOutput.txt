@@ -1,0 +1,83 @@
+end combo 
+start 0 target 8
+//below explores 2 with a targetof 6 (8-2); does not equal zero so we continue
+2 end combo 
+start 0 target 6
+
+//explores 2 2 with a comment of 4 (8-2-2); does not equal 0 so we continue; we get 2 2 b/c our start argument is being plugged in as index 
+
+of 0 in for loop
+2 2 end combo 
+start 0 target 4
+2 2 2 end combo 
+start 0 target 2
+
+//2 2 2 2 equals 8 which is what we are looking for; the argument "target" (which is essentially global because we keep passing the new 
+
+value in) will now be 0 which means we have correct solution combo
+2 2 2 2 end combo 
+start 0 target 0
+
+//since the previous solution is a correct solution or code actually "returns" therefore bringing us back to where the recursive function 
+
+was called. FOR THE FIRST TIME we hit the next line of code which is pop a number off the vector then iterate i since i is now less then 
+
+candiates.size() (which is 4). 
+2 2 2 4 end combo 
+
+//having a number less then zero means that we have gone too far therefore we dont want to add another number onto our combination (IF THE 
+
+SIZE OF THE COMBO VECTOR WAS LESS THE candiates.size())- it would just be a waste of time. i.e we dont want to contiinue down to the for 
+
+loop starting at index of zero like my second not above. Therefore we return to the where the recursive function was called and pop a 
+
+number off the vector then continue on the for loop
+start 1 target -2
+2 2 2 6 end combo 
+
+//note that the 8 has now appeared for the first time since we are iterating through the for loop but the target is negative so we wont go 
+
+any further and just return rather then continuing to the for loop. Our index will no longer be less then candiates size: 
+i < candidates.size();therefore we move on and now only have 3 numbers to use in the set
+start 2 target -4
+2 2 2 8 end combo 
+
+start 3 target -6
+2 2 4 end combo 
+
+start 1 target 0
+2 2 6 end combo 
+
+start 2 target -2
+2 2 8 end combo 
+
+start 3 target -4
+2 4 end combo 
+
+start 1 target 2
+2 4 4 end combo 
+start 1 target -2
+2 4 6 end combo 
+start 2 target -4
+2 4 8 end combo 
+start 3 target -6
+2 6 end combo 
+start 2 target 0
+2 8 end combo 
+start 3 target -2
+4 end combo 
+start 1 target 4
+4 4 end combo 
+start 1 target 0
+4 6 end combo 
+start 2 target -2
+4 8 end combo 
+start 3 target -4
+6 end combo 
+start 2 target 2
+6 6 end combo 
+start 2 target -4
+6 8 end combo 
+start 3 target -6
+8 end combo 
+start 3 target 0
