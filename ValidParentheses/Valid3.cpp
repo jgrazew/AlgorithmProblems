@@ -1,44 +1,34 @@
-//below is Java code (i think)- write a cpp solution like this that uses a stack but rather then a switch statement it uses a hash map to determine if the closing bracket is correct
-//think about the time complexities of the algorithms
+//I like the below implementation because it is clean BUT it has a slower execution time (only faster then 40% of submissions while my Valid2.cpp is faster then 100%) and takes more memory
 
 class Solution {
-
-  // Hash table that takes care of the mappings.
-  private HashMap<Character, Character> mappings;
-
-  // Initialize hash map with mappings. This simply makes the code easier to read.
-  public Solution() {
-    this.mappings = new HashMap<Character, Character>();
-    this.mappings.put(')', '(');
-    this.mappings.put('}', '{');
-    this.mappings.put(']', '[');
-  }
-
-  public boolean isValid(String s) {
-
-    // Initialize a stack to be used in the algorithm.
-    Stack<Character> stack = new Stack<Character>();
-
-    for (int i = 0; i < s.length(); i++) {
-      char c = s.charAt(i);
-
-      // If the current character is a closing bracket.
-      if (this.mappings.containsKey(c)) {
-
-        // Get the top element of the stack. If the stack is empty, set a dummy value of '#'
-        char topElement = stack.empty() ? '#' : stack.pop();
-
-        // If the mapping for this bracket doesn't match the stack's top element, return false.
-        if (topElement != this.mappings.get(c)) {
-          return false;
+public:    
+    bool isValid(string s) {
+    std::map<char,char> characterMapping;
+    characterMapping['('] = ')';
+    characterMapping['{'] = '}';
+    characterMapping['['] = ']';
+        
+        std::stack<char> theStack;
+        
+        for(std::string::size_type i = 0; i < s.size(); i++){
+            if(s[i] == '(' || s[i] == '{' || s[i] == '['){
+                theStack.push(s[i]);
+            } else {
+                if(theStack.empty()){
+                    return false;
+                }
+                char temp = theStack.top();
+                theStack.pop();
+                if(characterMapping[temp] != s[i]){
+                    return false;
+                }
+            }    
         }
-      } else {
-        // If it was an opening bracket, push to the stack.
-        stack.push(c);
-      }
+        
+        if(theStack.size() > 0){
+            return false;
+        }
+        
+        return true;
     }
-
-    // If the stack still contains elements, then it is an invalid expression.
-    return stack.isEmpty();
-  }
-}
+};
