@@ -7,6 +7,9 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+
+//time complexity of this is O(n^2) for a full binary tree. This can be reduced to O(n) by calling findHegiht() within the recursion rather then seperately
+
 class Solution {
 public:
     int findHeight(TreeNode* root){
