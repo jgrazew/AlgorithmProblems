@@ -44,11 +44,15 @@ public:
             }
             
             if(reverseFlag){
+                //if we didnt want to use the standard lib reverse algorithm we could reverse the vector through iterating through the vector starting
+                //at the end then then swapping the front and back elements until we reach the middle.
+                //We could also use a stack then pop off the stack and add back to the vector but this would be O(n) time complexity
                 std::reverse(tempVec.begin(), tempVec.end());
             }
             
             zigZag.push_back(tempVec);
             
+            //if we didnt want to use the reverse flag we could keep track of the level then use if(level % 2 == 0) { } to determine if we reverse or not 
             reverseFlag= !reverseFlag;
             
         }
