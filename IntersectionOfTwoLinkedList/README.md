@@ -6,6 +6,8 @@ It is guaranteed that there are no cycles anywhere in the entire linked structur
 
 Note that the linked lists must retain their original structure after the function returns.
 
+**Note for Joe: that you are given 2 seperate heads but by intersect you mean that the 2 seperate list intersect then merge into 1 liat 
+
  
 
 Example 1:
