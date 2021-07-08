@@ -1,3 +1,5 @@
+//below is the alternative to a dynamic programming solution.
+//Note that if the input is too long the time limit will exceed because of how many function calls you are making 
 class Solution {
 private:
     int minHelper(std::vector<int>& cost, int i){
