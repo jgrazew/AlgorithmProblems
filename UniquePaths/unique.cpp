@@ -14,6 +14,8 @@ public:
             vec[i][0] = 1;
         }
         
+        //robot can only get to [i][j] from 2 different paths; by taking a right or going down
+        //so in [i][j] we look at the number on top and to the left and add those numbers together to get the unique paths to [i][j]
         for(int i = 1; i < m; i++){
             for(int j = 1; j < n; j++){
                 vec[i][j] = vec[i-1][j] + vec[i][j-1]; 
