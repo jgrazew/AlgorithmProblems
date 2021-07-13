@@ -1,4 +1,5 @@
 //this should also be part of the string problems 
+//space and time complexity both O(n^2)
 class Solution {
 public:
     int minDistance(string word1, string word2) {
